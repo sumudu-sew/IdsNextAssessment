@@ -1,0 +1,25 @@
+<table class="table table-hover rounded">
+  <thead>
+    <tr class="table-active">
+      <th class="px-4">Name</th>
+      <th>Designation</th>
+      <th>Salary</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td class="px-4">{{ employee.name }}</td>
+      <td>{{ employee.designation }}</td>
+      <td>{{ employee.salary }}</td>
+      <td>
+        <button (click)="onDelete(employee.id)" class="btn main-color">
+            <i class="fas fa-trash"></i>
+        </button>
+        <a [routerLink]="['/update', employee.id]" class=" main-color">
+            <i class="fas fa-edit"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

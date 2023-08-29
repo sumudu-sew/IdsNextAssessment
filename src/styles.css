@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+/* src/styles.css */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+.main-color{
+    color: #E55700;
+}
+
+.main-bg-color{
+    background: #E55700;
+}
+
+.main-border-color {
+    border-color: #E55700;
+}
+
+.btn-width {
+    width: 150px !important;
+}
+
+.logo {
+    width: 150px;
+}

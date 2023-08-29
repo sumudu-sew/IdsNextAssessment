@@ -1,0 +1,41 @@
+<div class="row bg-white shadow mx-2 px-5">
+    <div class="col">
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+            <div class="form-group mt-3">
+                <label class="text-muted py-2">Name</label>
+                <input type="text" class="form-control" placeholder="Enter employee name" formControlName="name" required>
+            </div>
+
+            <div class="form-group mt-3">
+                <label class="text-muted py-2">Designation</label>
+                <select class="form-control" formControlName="designation" required>
+                    <option class="text-muted" disabled selected value="">--Select Designation--</option>
+                    <option *ngFor="let designation of designations" [value]="designation">{{ designation }}</option>
+                </select>
+            </div>
+
+            <div class="form-group mt-3">
+                <label class="text-muted py-2">Salary</label>
+                <input type="text" class="form-control" placeholder="Enter employee salary" formControlName="salary" required>
+            </div>
+
+            <div class="form-group my-5 d-flex justify-content-end">
+                <button class="btn btn-outline-danger mx-3 btn-width" type="button" (click)="onReset()">Reset</button>  
+                <button class="btn btn-primary main-bg-color main-border-color btn-width" type="submit">{{ isUpdateMode ? 'Update' : 'Save' }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- <h2>{{ isUpdateMode ? 'Edit Employee' : 'Create Employee' }}</h2>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()"> -->
+  <!-- <label>ID: <input type="number" formControlName="id" [readonly]="isUpdateMode"></label><br> -->
+  <!-- <label>Name: <input formControlName="name" required></label><br>
+  <label>Designation:
+    <select formControlName="designation" required>
+      <option *ngFor="let designation of designations">{{ designation }}</option>
+    </select>
+  </label><br>
+  <label>Salary: <input type="text" formControlName="salary" required></label><br>
+  <button type="submit">{{ isUpdateMode ? 'Update' : 'Create' }}</button>
+</form> -->
